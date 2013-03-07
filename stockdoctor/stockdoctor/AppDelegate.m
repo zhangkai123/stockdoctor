@@ -42,14 +42,14 @@
 	[nc3 release];
     
 	NSMutableDictionary *imgDic = [NSMutableDictionary dictionaryWithCapacity:3];
-	[imgDic setObject:[UIImage imageNamed:@"zixuangu01.png"] forKey:@"Default"];
-	[imgDic setObject:[UIImage imageNamed:@"zixuangu02.png"] forKey:@"Seleted"];
+	[imgDic setObject:[UIImage imageNamed:@"zixuangu01"] forKey:@"Default"];
+	[imgDic setObject:[UIImage imageNamed:@"zixuangu02"] forKey:@"Seleted"];
 	NSMutableDictionary *imgDic2 = [NSMutableDictionary dictionaryWithCapacity:3];
-	[imgDic2 setObject:[UIImage imageNamed:@"xuangu01.png"] forKey:@"Default"];
-	[imgDic2 setObject:[UIImage imageNamed:@"xuangu02.png"] forKey:@"Seleted"];
+	[imgDic2 setObject:[UIImage imageNamed:@"xuangu01"] forKey:@"Default"];
+	[imgDic2 setObject:[UIImage imageNamed:@"xuangu02"] forKey:@"Seleted"];
 	NSMutableDictionary *imgDic3 = [NSMutableDictionary dictionaryWithCapacity:3];
-	[imgDic3 setObject:[UIImage imageNamed:@"shezhi01.png"] forKey:@"Default"];
-	[imgDic3 setObject:[UIImage imageNamed:@"shezhi02.png"] forKey:@"Seleted"];
+	[imgDic3 setObject:[UIImage imageNamed:@"shezhi01"] forKey:@"Default"];
+	[imgDic3 setObject:[UIImage imageNamed:@"shezhi02"] forKey:@"Seleted"];
 	
 	NSArray *imgArr = [NSArray arrayWithObjects:imgDic,imgDic2,imgDic3,nil];
         

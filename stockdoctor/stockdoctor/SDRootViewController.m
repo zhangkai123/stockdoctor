@@ -51,6 +51,7 @@
         [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"topbar"] forBarMetrics:UIBarMetricsDefault];
         [self.navigationController.navigationBar setOpaque:1.0];
     }
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.png"]];
 }
 
 - (void)didReceiveMemoryWarning
