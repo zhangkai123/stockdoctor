@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SDRootViewController.h"
 
-@interface SDSelfChooseViewController : UIViewController
+@interface SDSelfChooseViewController : SDRootViewController
 
 @end

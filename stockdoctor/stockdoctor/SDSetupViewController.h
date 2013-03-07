@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SDRootViewController.h"
 
-@interface SDSetupViewController : UIViewController
+@interface SDSetupViewController : SDRootViewController
 
 @end

@@ -24,9 +24,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    SDSelfChooseViewController *firstVC = [[SDSelfChooseViewController alloc] init];
-	SDSmartChooseViewController *secondVC = [[SDSmartChooseViewController alloc] init];
-	SDSetupViewController *thirdVC = [[SDSetupViewController alloc] init];
+    SDSelfChooseViewController *firstVC = [[SDSelfChooseViewController alloc] initWithTabBar];
+	SDSmartChooseViewController *secondVC = [[SDSmartChooseViewController alloc] initWithTabBar];
+	SDSetupViewController *thirdVC = [[SDSetupViewController alloc] initWithTabBar];
     
     UINavigationController *nc1 = [[UINavigationController alloc] initWithRootViewController:firstVC];
 	[firstVC release];
