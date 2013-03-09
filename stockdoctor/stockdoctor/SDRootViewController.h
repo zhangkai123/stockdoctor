@@ -13,5 +13,5 @@
     UILabel *titleLabel;
 }
 
--(id) initWithTabBar;
+-(id) initWithNavBar;
 @end

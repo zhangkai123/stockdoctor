@@ -7,6 +7,7 @@
 //
 
 #import "SDSelfChooseViewController.h"
+#import "SDAddStockViewController.h"
 
 @interface SDSelfChooseViewController ()
 
@@ -58,7 +59,9 @@
 }
 -(void)addStock
 {
-    
+    SDAddStockViewController *stockViewController = [[SDAddStockViewController alloc]initWithNavBar];
+    [self.navigationController pushViewController:stockViewController animated:YES];
+    [stockViewController release];
 }
 - (void)didReceiveMemoryWarning
 {

@@ -19,7 +19,7 @@
     [titleLabel release];
     [super dealloc];
 }
--(id) initWithTabBar {
+-(id) initWithNavBar {
     if ([self init]) {
         
         titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 0, 220, 30)];

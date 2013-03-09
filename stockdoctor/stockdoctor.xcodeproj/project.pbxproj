@@ -32,6 +32,8 @@
 		4B98625616E62BF2000A1893 /* SDSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B98625516E62BF1000A1893 /* SDSetupViewController.m */; };
 		4B98625C16E630F6000A1893 /* LeveyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B98625916E630F6000A1893 /* LeveyTabBarController.m */; };
 		4B98625D16E630F6000A1893 /* LeveyTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B98625B16E630F6000A1893 /* LeveyTabBar.m */; };
+		4BE9F30916EAAC2E003D3462 /* SDAddStockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE9F30816EAAC2E003D3462 /* SDAddStockViewController.m */; };
+		4BE9F30B16EAAD86003D3462 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BE9F30A16EAAD86003D3462 /* back@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,9 @@
 		4B98625916E630F6000A1893 /* LeveyTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeveyTabBarController.m; sourceTree = "<group>"; };
 		4B98625A16E630F6000A1893 /* LeveyTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeveyTabBar.h; sourceTree = "<group>"; };
 		4B98625B16E630F6000A1893 /* LeveyTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeveyTabBar.m; sourceTree = "<group>"; };
+		4BE9F30716EAAC2E003D3462 /* SDAddStockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDAddStockViewController.h; sourceTree = "<group>"; };
+		4BE9F30816EAAC2E003D3462 /* SDAddStockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDAddStockViewController.m; sourceTree = "<group>"; };
+		4BE9F30A16EAAD86003D3462 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +94,7 @@
 		4B63AFFB16EA199400D80380 /* navbarImage */ = {
 			isa = PBXGroup;
 			children = (
+				4BE9F30A16EAAD86003D3462 /* back@2x.png */,
 				4B63AFFC16EA19BB00D80380 /* addstock@2x.png */,
 				4B63AFFD16EA19BB00D80380 /* edit@2x.png */,
 			);
@@ -136,6 +142,8 @@
 				4B98625216E62BE1000A1893 /* SDSmartChooseViewController.m */,
 				4B98625416E62BF1000A1893 /* SDSetupViewController.h */,
 				4B98625516E62BF1000A1893 /* SDSetupViewController.m */,
+				4BE9F30716EAAC2E003D3462 /* SDAddStockViewController.h */,
+				4BE9F30816EAAC2E003D3462 /* SDAddStockViewController.m */,
 				4B98622816E6243E000A1893 /* Supporting Files */,
 			);
 			path = stockdoctor;
@@ -248,6 +256,7 @@
 				4B0421D716E8DF4600537D26 /* bg@2x.png in Resources */,
 				4B63AFFE16EA19BB00D80380 /* addstock@2x.png in Resources */,
 				4B63AFFF16EA19BB00D80380 /* edit@2x.png in Resources */,
+				4BE9F30B16EAAD86003D3462 /* back@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +275,7 @@
 				4B98625C16E630F6000A1893 /* LeveyTabBarController.m in Sources */,
 				4B98625D16E630F6000A1893 /* LeveyTabBar.m in Sources */,
 				4B3A4BCD16E8CEBA00C3A06C /* SDRootViewController.m in Sources */,
+				4BE9F30916EAAC2E003D3462 /* SDAddStockViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
