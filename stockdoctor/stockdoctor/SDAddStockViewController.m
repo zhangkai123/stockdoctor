@@ -38,6 +38,20 @@
     [self navigationItem].leftBarButtonItem = leftbarButton;
     [backButton release];
     [leftbarButton release];
+    
+    UIImageView *background = [[UIImageView alloc]initWithFrame:CGRectMake(7.25, 5, 305.5, 45)];
+    background.image = [UIImage imageNamed:@"search"];
+    background.userInteractionEnabled = YES;
+    [self.view addSubview:background];
+    [background release];
+    
+    UITextField *textField = [[UITextField alloc]initWithFrame:CGRectMake(30 + 7.25, 5, 305.5 - 30, 45)];
+    [textField setPlaceholder:@"请输入股票代码\\全拼首\\字母"];
+    [textField setTextColor:[UIColor whiteColor]];
+    textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    [textField becomeFirstResponder];
+    [self.view addSubview:textField];
+    [textField release];
 }
 -(void)goBack
 {
