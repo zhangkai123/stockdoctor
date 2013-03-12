@@ -35,6 +35,7 @@
 		4BE9F30916EAAC2E003D3462 /* SDAddStockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE9F30816EAAC2E003D3462 /* SDAddStockViewController.m */; };
 		4BE9F30B16EAAD86003D3462 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BE9F30A16EAAD86003D3462 /* back@2x.png */; };
 		4BF7B7CF16EE067B00AC100C /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BF7B7CE16EE067B00AC100C /* search@2x.png */; };
+		4BF7B7D216EE321900AC100C /* QQStock.db in Resources */ = {isa = PBXBuildFile; fileRef = 4BF7B7D116EE321900AC100C /* QQStock.db */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		4BE9F30816EAAC2E003D3462 /* SDAddStockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDAddStockViewController.m; sourceTree = "<group>"; };
 		4BE9F30A16EAAD86003D3462 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
 		4BF7B7CE16EE067B00AC100C /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@2x.png"; sourceTree = "<group>"; };
+		4BF7B7D116EE321900AC100C /* QQStock.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = QQStock.db; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 		4B98622816E6243E000A1893 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4BF7B7D016EE320B00AC100C /* DB */,
 				4B63AFFB16EA199400D80380 /* navbarImage */,
 				4B98624116E6263E000A1893 /* tabimages */,
 				4B0421D616E8DF4600537D26 /* bg@2x.png */,
@@ -192,6 +195,14 @@
 				4B98625B16E630F6000A1893 /* LeveyTabBar.m */,
 			);
 			name = LeveyTabBar;
+			sourceTree = "<group>";
+		};
+		4BF7B7D016EE320B00AC100C /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				4BF7B7D116EE321900AC100C /* QQStock.db */,
+			);
+			name = DB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +272,7 @@
 				4B63AFFF16EA19BB00D80380 /* edit@2x.png in Resources */,
 				4BE9F30B16EAAD86003D3462 /* back@2x.png in Resources */,
 				4BF7B7CF16EE067B00AC100C /* search@2x.png in Resources */,
+				4BF7B7D216EE321900AC100C /* QQStock.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
