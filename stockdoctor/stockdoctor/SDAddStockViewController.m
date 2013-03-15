@@ -14,6 +14,11 @@
 
 @implementation SDAddStockViewController
 
+-(void)dealloc
+{
+    [tableview release];
+    [super dealloc];
+}
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -52,11 +57,33 @@
     [textField becomeFirstResponder];
     [self.view addSubview:textField];
     [textField release];
+    
+    tableview = [[UITableView alloc]initWithFrame:CGRectMake(0, 50, 320, 460 - 50)];
+    tableview.dataSource = self;
+    tableview.delegate = self;
+    [self.view addSubview:tableview];
 }
 -(void)goBack
 {
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 10;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if (!cell) {
+        cell = [[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"]autorelease];
+    }
+    return cell;
+}
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];

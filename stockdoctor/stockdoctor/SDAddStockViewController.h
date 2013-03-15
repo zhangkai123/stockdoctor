@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "SDRootViewController.h"
 
-@interface SDAddStockViewController:SDRootViewController
-
+@interface SDAddStockViewController:SDRootViewController<UITableViewDataSource,UITableViewDelegate>
+{
+    UITableView *tableview;
+}
 @end
