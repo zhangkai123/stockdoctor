@@ -14,19 +14,15 @@
 @interface RessourceManager : NSObject {
 
 	NSString		*databasePath;
-	
-	sqlite3_stmt *getAllBooks;	
 }
 
 
 @property (nonatomic, retain) NSString *databasePath;
-@property (nonatomic, retain) NSMutableArray *booksArray;
+@property (nonatomic, retain) NSMutableArray *stocksArray;
 
 - (id)initDatabase:(NSString*)databaseName;
-
 + (RessourceManager*)sharedResources;
 
--(void)insertBook:(NSString *)thumbIN bookN:(NSString *)bName d:(NSString *)bookD des:(NSString *)bookDes;
--(void)featchAllBooks;
+-(void)featchAllStocks:(NSString *)keyStr;
 
 @end

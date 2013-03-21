@@ -14,6 +14,7 @@
 		4B63AFFF16EA19BB00D80380 /* edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B63AFFD16EA19BB00D80380 /* edit@2x.png */; };
 		4B7018B516F1FD110055B400 /* RessourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7018B416F1FD110055B400 /* RessourceManager.m */; };
 		4B7018B716F2010D0055B400 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B7018B616F2010D0055B400 /* libsqlite3.0.dylib */; };
+		4B8D98EE16FB324B000B22AC /* SDStock.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8D98ED16FB324B000B22AC /* SDStock.m */; };
 		4B98622216E6243E000A1893 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B98622116E6243E000A1893 /* UIKit.framework */; };
 		4B98622416E6243E000A1893 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B98622316E6243E000A1893 /* Foundation.framework */; };
 		4B98622616E6243E000A1893 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B98622516E6243E000A1893 /* CoreGraphics.framework */; };
@@ -50,6 +51,8 @@
 		4B7018B316F1FD110055B400 /* RessourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RessourceManager.h; sourceTree = "<group>"; };
 		4B7018B416F1FD110055B400 /* RessourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RessourceManager.m; sourceTree = "<group>"; };
 		4B7018B616F2010D0055B400 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		4B8D98EC16FB324B000B22AC /* SDStock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStock.h; sourceTree = "<group>"; };
+		4B8D98ED16FB324B000B22AC /* SDStock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStock.m; sourceTree = "<group>"; };
 		4B98621E16E6243E000A1893 /* stockdoctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stockdoctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B98622116E6243E000A1893 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4B98622316E6243E000A1893 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -121,6 +124,15 @@
 			name = DataBase;
 			sourceTree = "<group>";
 		};
+		4B8D98EF16FB3262000B22AC /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				4B8D98EC16FB324B000B22AC /* SDStock.h */,
+				4B8D98ED16FB324B000B22AC /* SDStock.m */,
+			);
+			name = DataModel;
+			sourceTree = "<group>";
+		};
 		4B98621516E6243E000A1893 = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +164,7 @@
 		4B98622716E6243E000A1893 /* stockdoctor */ = {
 			isa = PBXGroup;
 			children = (
+				4B8D98EF16FB3262000B22AC /* DataModel */,
 				4B7018B216F1FD030055B400 /* DataBase */,
 				4B98625716E630E8000A1893 /* LeveyTabBar */,
 				4B98623016E6243E000A1893 /* AppDelegate.h */,
@@ -310,6 +323,7 @@
 				4B3A4BCD16E8CEBA00C3A06C /* SDRootViewController.m in Sources */,
 				4BE9F30916EAAC2E003D3462 /* SDAddStockViewController.m in Sources */,
 				4B7018B516F1FD110055B400 /* RessourceManager.m in Sources */,
+				4B8D98EE16FB324B000B22AC /* SDStock.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

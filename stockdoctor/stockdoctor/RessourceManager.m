@@ -1,11 +1,11 @@
 
 
 #import "RessourceManager.h"
-//#import "MyBook.h"
+#import "SDStock.h"
 
 @implementation RessourceManager
 @synthesize databasePath;
-@synthesize booksArray = _booksArray;
+@synthesize stocksArray = _stocksArray;
 
 static RessourceManager* instance = NULL;
 
@@ -32,69 +32,45 @@ static RessourceManager* instance = NULL;
 		[manager copyItemAtPath:appPath toPath:databasePath error:NULL];
 	}
 	
-	// setup our compiled sql statements
-	sqlite3 *database;
-	if(sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
-		printf("SQLite is ok\n");
-		sqlite3_stmt *compiledStatement;
-				
-		const char *featchBooks = "select * from Books" ;
-		sqlite3_prepare_v2(database, featchBooks, -1, &compiledStatement, NULL);
-		getAllBooks = compiledStatement;	
-	}
-	
-	sqlite3_close(database);
-	return self;	
+	return self;
 }
 
-//-(void)featchAllBooks
-//{
-//	sqlite3 *database;
-//    if (_booksArray != nil) {
-//        [_booksArray release];
-//        _booksArray = nil;
-//    }
-//    _booksArray = [[NSMutableArray alloc] init];
-//	
-//	if(sqlite3_open([self.databasePath UTF8String], &database) == SQLITE_OK) {
-//		
-//		sqlite3_reset(getAllBooks);
-//		while(sqlite3_step(getAllBooks) == SQLITE_ROW) {
-//
-//            NSString *thumbImageName = [NSString stringWithUTF8String:(char *)sqlite3_column_text(getAllBooks, 0)];
-//            NSString *bookName = [NSString stringWithUTF8String:(char *)sqlite3_column_text(getAllBooks, 1)];
-//            NSString *date = [NSString stringWithUTF8String:(char *)sqlite3_column_text(getAllBooks, 2)];
-//            NSString *description = [NSString stringWithUTF8String:(char *)sqlite3_column_text(getAllBooks, 3)];
-//            
-//            MyBook *myBook = [[MyBook alloc]init];
-//            myBook.thumbImageName = thumbImageName;
-//            myBook.bookName = bookName;
-//            myBook.date = date;
-//            myBook.description = description;
-//            
-//            [self.booksArray addObject:myBook];
-//            [myBook release];
-//		}	
-//	}
-//	sqlite3_close(database);
-//}
-//-(void)insertBook:(NSString *)thumbIN bookN:(NSString *)bName d:(NSString *)bookD des:(NSString *)bookDes
-//{
-//    sqlite3 *database;
-//	sqlite3_stmt *compiledStatement;
-//	
-//	if(sqlite3_open([self.databasePath UTF8String], &database) == SQLITE_OK){
-//		NSString *insertCommand = [NSString stringWithFormat:@"insert into Books (thumbImageName,bookName,date,description) VALUES('%@','%@','%@','%@')" , thumbIN , bName , bookD,bookDes];
-//		const char *insertSqlCommand = [insertCommand UTF8String];
-//		if (sqlite3_prepare_v2(database, insertSqlCommand, -1, &compiledStatement, NULL) == SQLITE_OK) {
-//			if (sqlite3_step(compiledStatement) == SQLITE_DONE) {
-//				compiledStatement = nil;
-//				
-//			}			
-//			printf("ok\n");
-//		}
-//        
-//	}
-//	sqlite3_close(database);
-//}
+-(void)featchAllStocks:(NSString *)keyStr
+{
+	sqlite3 *database;
+    if (_stocksArray != nil) {
+        [_stocksArray release];
+        _stocksArray = nil;
+    }
+    _stocksArray = [[NSMutableArray alloc] init];
+	
+	if(sqlite3_open([self.databasePath UTF8String], &database) == SQLITE_OK) {
+		
+        sqlite3_stmt *featchStockCodeStatement;
+        const char *featchStockCode = (const char *)[[NSString stringWithFormat:@"SELECT * FROM key_table where key='%@'",keyStr] UTF8String];
+        sqlite3_prepare_v2(database, featchStockCode, -1, &featchStockCodeStatement, NULL);
+		sqlite3_reset(featchStockCodeStatement);
+        
+		while(sqlite3_step(featchStockCodeStatement) == SQLITE_ROW) {
+            NSString *stockString = [NSString stringWithUTF8String:(char *)sqlite3_column_text(featchStockCodeStatement, 1)];
+            NSArray *stockNames = [stockString componentsSeparatedByString:@","];
+            
+            for (NSString *stockName in stockNames) {
+             
+                sqlite3_stmt *featchStockStatement;
+                const char *featchStocks = (const char *)[[NSString stringWithFormat:@"select * from values_table where stockCode='%@'",stockName] UTF8String];
+                sqlite3_prepare_v2(database, featchStocks, -1, &featchStockStatement, NULL);
+                sqlite3_reset(featchStockStatement);
+                while (sqlite3_step(featchStockStatement) == SQLITE_ROW) {
+                    NSString *stockName = [NSString stringWithUTF8String:(char *)sqlite3_column_text(featchStockStatement, 1)];
+                    NSString *stockCode = [NSString stringWithUTF8String:(char *)sqlite3_column_text(featchStockStatement, 0)];
+                    SDStock *stock = [[SDStock alloc]initWithStock:stockCode stockN:stockName];
+                    [_stocksArray addObject:stock];
+                    [stock release];
+                }
+            }
+		}
+	}
+	sqlite3_close(database);
+}
 @end

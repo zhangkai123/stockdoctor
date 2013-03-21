@@ -7,6 +7,8 @@
 //
 
 #import "SDAddStockViewController.h"
+#import "RessourceManager.h"
+#import "SDStock.h"
 
 @interface SDAddStockViewController ()
 
@@ -62,6 +64,9 @@
     tableview.dataSource = self;
     tableview.delegate = self;
     [self.view addSubview:tableview];
+    
+    RessourceManager *ressourceManager = [RessourceManager sharedResources];
+    [ressourceManager featchAllStocks:@"min"];
 }
 -(void)goBack
 {
@@ -73,7 +78,8 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    RessourceManager *ressourceManager = [RessourceManager sharedResources];
+    return [ressourceManager.stocksArray count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -81,6 +87,10 @@
     if (!cell) {
         cell = [[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"]autorelease];
     }
+    RessourceManager *ressourceManager = [RessourceManager sharedResources];
+    SDStock *stock = [ressourceManager.stocksArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = stock.stockName;
+    
     return cell;
 }
 
