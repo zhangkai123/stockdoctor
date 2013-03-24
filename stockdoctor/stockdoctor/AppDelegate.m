@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "LeveyTabBarController.h"
 #import "SDSelfChooseViewController.h"
 #import "SDSmartChooseViewController.h"
 #import "SDSetupViewController.h"

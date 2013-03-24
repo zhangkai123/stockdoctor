@@ -9,6 +9,7 @@
 #import "SDAddStockViewController.h"
 #import "RessourceManager.h"
 #import "SDStock.h"
+#import "SDStockDetailViewController.h"
 
 @interface SDAddStockViewController ()
 
@@ -29,7 +30,6 @@
     }
     return self;
 }
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -54,6 +54,8 @@
     
     UITextField *textField = [[UITextField alloc]initWithFrame:CGRectMake(30 + 7.25, 5, 305.5 - 30, 45)];
     [textField setPlaceholder:@"请输入股票代码\\全拼首\\字母"];
+    textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    textField.delegate = self;
     [textField setTextColor:[UIColor whiteColor]];
     textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     [textField becomeFirstResponder];
@@ -61,21 +63,46 @@
     [textField release];
     
     tableview = [[UITableView alloc]initWithFrame:CGRectMake(0, 50, 320, 460 - 50)];
+    tableview.backgroundColor = [UIColor clearColor];
+    tableview.separatorColor = [UIColor lightGrayColor];
     tableview.dataSource = self;
     tableview.delegate = self;
-    [self.view addSubview:tableview];
-    
-    RessourceManager *ressourceManager = [RessourceManager sharedResources];
-    [ressourceManager featchAllStocks:@"min"];
+    [self.view addSubview:tableview];    
 }
 -(void)goBack
 {
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController dismissModalViewControllerAnimated:YES];
+}
+#pragma UITextFieldDelegate
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    
+}
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    return YES;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
 }
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    [self feathStockData:newString];
+    return YES;
+}
+-(void)feathStockData:(NSString *)stockS
+{
+    RessourceManager *ressourceManager = [RessourceManager sharedResources];
+    [ressourceManager featchAllStocks:stockS];
+    [tableview reloadData];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     RessourceManager *ressourceManager = [RessourceManager sharedResources];
@@ -93,11 +120,11 @@
     
     return cell;
 }
-
--(void)viewWillAppear:(BOOL)animated
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [super viewWillAppear:animated];
-    titleLabel.text = @"添加股票";
+    SDStockDetailViewController *stockDetailViewController = [[SDStockDetailViewController alloc]initWithNavBar];
+    [self.navigationController pushViewController:stockDetailViewController animated:YES];
+    [stockDetailViewController release];
 }
 - (void)didReceiveMemoryWarning
 {

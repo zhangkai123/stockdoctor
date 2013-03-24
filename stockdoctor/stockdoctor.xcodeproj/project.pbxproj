@@ -14,6 +14,7 @@
 		4B63AFFF16EA19BB00D80380 /* edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B63AFFD16EA19BB00D80380 /* edit@2x.png */; };
 		4B7018B516F1FD110055B400 /* RessourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7018B416F1FD110055B400 /* RessourceManager.m */; };
 		4B7018B716F2010D0055B400 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B7018B616F2010D0055B400 /* libsqlite3.0.dylib */; };
+		4B7486C416FEEEC10065D6C2 /* SDStockDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7486C316FEEEC10065D6C2 /* SDStockDetailViewController.m */; };
 		4B8D98EE16FB324B000B22AC /* SDStock.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8D98ED16FB324B000B22AC /* SDStock.m */; };
 		4B98622216E6243E000A1893 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B98622116E6243E000A1893 /* UIKit.framework */; };
 		4B98622416E6243E000A1893 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B98622316E6243E000A1893 /* Foundation.framework */; };
@@ -51,6 +52,8 @@
 		4B7018B316F1FD110055B400 /* RessourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RessourceManager.h; sourceTree = "<group>"; };
 		4B7018B416F1FD110055B400 /* RessourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RessourceManager.m; sourceTree = "<group>"; };
 		4B7018B616F2010D0055B400 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		4B7486C216FEEEC10065D6C2 /* SDStockDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStockDetailViewController.h; sourceTree = "<group>"; };
+		4B7486C316FEEEC10065D6C2 /* SDStockDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStockDetailViewController.m; sourceTree = "<group>"; };
 		4B8D98EC16FB324B000B22AC /* SDStock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStock.h; sourceTree = "<group>"; };
 		4B8D98ED16FB324B000B22AC /* SDStock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStock.m; sourceTree = "<group>"; };
 		4B98621E16E6243E000A1893 /* stockdoctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stockdoctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +182,8 @@
 				4B98625516E62BF1000A1893 /* SDSetupViewController.m */,
 				4BE9F30716EAAC2E003D3462 /* SDAddStockViewController.h */,
 				4BE9F30816EAAC2E003D3462 /* SDAddStockViewController.m */,
+				4B7486C216FEEEC10065D6C2 /* SDStockDetailViewController.h */,
+				4B7486C316FEEEC10065D6C2 /* SDStockDetailViewController.m */,
 				4B98622816E6243E000A1893 /* Supporting Files */,
 			);
 			path = stockdoctor;
@@ -324,6 +329,7 @@
 				4BE9F30916EAAC2E003D3462 /* SDAddStockViewController.m in Sources */,
 				4B7018B516F1FD110055B400 /* RessourceManager.m in Sources */,
 				4B8D98EE16FB324B000B22AC /* SDStock.m in Sources */,
+				4B7486C416FEEEC10065D6C2 /* SDStockDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

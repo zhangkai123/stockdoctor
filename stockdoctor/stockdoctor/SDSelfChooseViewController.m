@@ -7,7 +7,7 @@
 //
 
 #import "SDSelfChooseViewController.h"
-#import "SDAddStockViewController.h"
+#import "AppDelegate.h"
 
 @interface SDSelfChooseViewController ()
 
@@ -23,7 +23,6 @@
     }
     return self;
 }
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -59,10 +58,15 @@
 }
 -(void)addStock
 {
-    SDAddStockViewController *stockViewController = [[SDAddStockViewController alloc]initWithNavBar];
-    [self.navigationController pushViewController:stockViewController animated:YES];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    SDAddStockViewController *stockViewController = [[SDAddStockViewController alloc]init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:stockViewController];
+    [[appDelegate leveyTabBarController] presentModalViewController:navigationController animated:YES];
     [stockViewController release];
+    [navigationController release];
 }
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

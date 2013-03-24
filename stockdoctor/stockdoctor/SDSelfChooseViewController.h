@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SDRootViewController.h"
+#import "SDAddStockViewController.h"
 
 @interface SDSelfChooseViewController : SDRootViewController
 

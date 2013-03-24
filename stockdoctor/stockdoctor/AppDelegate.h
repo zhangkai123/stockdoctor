@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LeveyTabBarController.h"
 
-@class LeveyTabBarController;
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 {
     LeveyTabBarController *leveyTabBarController;
